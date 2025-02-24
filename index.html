@@ -38,18 +38,13 @@
       flex-direction: column;
     }
 
-    #page2 {
-      transform: scaleY(-1);
-      scroll-snap-align: start;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+    .flipped {
+  transform: scaleY(-1);
+}
 
 
     #page3 {
+      background-color: #EB5A94;
       transform: scaleY(-1);
       scroll-snap-align: start;
       height: 100vh;
@@ -58,6 +53,20 @@
       align-items: center;
       flex-direction: column;
     }
+
+.block {
+  position: absolute; /* Позиционируем относительно родительского элемента */
+    top: 50; /* Начинаем с верхней части */
+    left: 82; /* Начинаем с левой части */
+    width: 90%; /* Занимаем всю ширину */
+    height: 80%; /* Занимаем всю высоту */
+    background-color: #FFD5E5; /* Полупрозрачный розовый цвет */
+    opacity: 50%;
+    border-radius: 20px; /* Закругленные углы */
+    z-index: 5; /* Устанавливаем z-index, чтобы быть под изображением, но над фоном */
+
+}
+
 
     .welcome-text {
     color: #EB5A94;
@@ -167,6 +176,11 @@
     z-index: -1; /* Устанавливаем z-index, чтобы быть под изображением, но над фоном */
 }
 
+.image {
+  transform: rotate(180deg);
+  width: 400px;
+}
+
 
 
   </style>
@@ -179,16 +193,20 @@
     <img src="image/первый кадр.png" alt="Изображение" class="top-image">
   </div>
 
-  <div class="page" id="page2">
+  <div class="page flipped" id="page2">
     <canvas id="waveCanvasMirror"></canvas>
     <div class="overlay"></div>
     <div class="hidden"></div>
     <div class="text-container">
   </div>
 </div>
+
 <p class="text">здесь скоро появится контент</p>
-<div class="page2" id="page3">
+
+<div class="page" id="page3">
   <canvas id="waveCanvasMirror"></canvas>
+  <div class="block"></div> 
+  <img src="" alt="Изображение" class="image">
   <div class="hidden"></div>
 </div>
 
