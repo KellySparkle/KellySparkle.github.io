@@ -48,6 +48,7 @@
       flex-direction: column;
     }
 
+
     #page3 {
       transform: scaleY(-1);
       scroll-snap-align: start;
@@ -73,6 +74,27 @@
     -ms-user-select: none;
     user-select: none;
     animation: breathe 2s ease-in-out infinite alternate; /* Добавляем анимацию */
+    }
+
+
+    .text {
+      color: #fff;
+      position: relative;
+      font-family: 'Rubik Vinyl', sans-serif;
+      font-size: 46px;
+      font-weight: bold;
+      text-align: center;
+      top: -60%;
+      left: 2%;
+      z-index: 10;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      animation: breathe 2s ease-in-out infinite alternate; /* Добавляем анимацию */
+      transform: rotate(180deg);
+      
     }
 
 @keyframes breathe {
@@ -161,8 +183,10 @@
     <canvas id="waveCanvasMirror"></canvas>
     <div class="overlay"></div>
     <div class="hidden"></div>
+    <div class="text-container">
+  </div>
 </div>
-
+<p class="text">здесь скоро появится контент</p>
 <div class="page2" id="page3">
   <canvas id="waveCanvasMirror"></canvas>
   <div class="hidden"></div>
