@@ -234,3 +234,13 @@ function scrollDown() {
       nextSection.scrollIntoView({ behavior: "smooth" });
   }
 }
+
+const flipBox = document.getElementById('flipBox');
+        
+        flipBox.addEventListener('mouseenter', () => {
+            flipBox.classList.add('flipped');
+        });
+        
+        flipBox.addEventListener('mouseleave', () => {
+            flipBox.classList.remove('flipped');
+        });
