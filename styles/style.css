@@ -165,3 +165,13 @@ background-color: #fff; /* Полупрозрачный розовый цвет 
 border-radius: 20px; /* Закругленные углы */
 z-index: -1; /* Устанавливаем z-index, чтобы быть под изображением, но над фоном */
 }
+
+.image {
+position: fixed;
+transform: rotate(180deg);
+transform: scaleY(-1);
+width: 400px;
+z-index: 10;
+left: 0%;
+bottom: 0%;
+}
