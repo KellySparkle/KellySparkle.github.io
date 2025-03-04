@@ -208,14 +208,16 @@ transform: scale(1.05);
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s ease;
+    left: -100%;
+    top: -150%;
   }
   .flipped {
     transform: rotateY(180deg);
   }
   .flip-box .side {
     position: absolute;
-    width: 229px;
-    height: 296px;
+    width: 250px;
+    height: 320px;
     backface-visibility: hidden;
     display: flex;
     align-items: center;
