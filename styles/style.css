@@ -1,7 +1,6 @@
 html, body {
   overflow-x: hidden; 
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
   height: 100vh;
   margin: 0;
   body {
@@ -196,34 +195,73 @@ transform: scale(1.05);
   left: 0%;
   bottom: 0%;
   }
-  .container {
-    width: 200px;
-    height: 40px;
-    perspective: 1000px;
-    z-index: 10;
-  }
-  .flip-box {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-  }
   .flipped {
     transform: rotateY(180deg);
   }
-  .flip-box .side {
-    position: absolute;
-    width: 229px;
-    height: 296px;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
+   /* весь контейнер поддерживает перспективу */
+.flip-container {
+	perspective: 1000;
+}
+	/* переверните сторону при проведении мышью */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+  position: fixed;
+	width: 429px;
+	height: 496px;
+  top: 35%;
+  left: 30%;
+  z-index: 10;
+}
+
+/* здесь находится скорость перевертывания */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* скройте обратную сторону во время переворота */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* лицевая сторона размещена над обратной */
+.front {
     border-radius: 20px;
-  }
-  .flip-box .back {
-    transform: rotateY(180deg);
     background-color: #fff;
-  }
+	z-index: 2;
+}
+
+/* обратная, изначально скрытая сторона */
+.back {
+    border-radius: 20px;
+    background-color: #FFf;
+	transform: rotateY(180deg);
+}
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+
+
+#flip2 {
+  left: calc(30% + 26.4%); /* Сдвигаем на ширину первого блока и немного отступа */
+}
+
+.block-links {
+  position: fixed;
+  background-color: #FFf;
+  width: 933px;
+  height: 200px;
+  top: 12%;
+  left: 30%;
+  border-radius: 20px;
+  z-index: 10;
+}

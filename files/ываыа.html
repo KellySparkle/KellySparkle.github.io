@@ -5,56 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Переворачивающийся блок</title>
     <style>
-        .container {
-            width: 200px;
-            height: 40px;
-            perspective: 1000px;
-        }
-        .flip-box {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-        }
-        .flipped {
-            transform: rotateY(180deg);
-        }
-        .flip-box .side {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-        }
-        .flip-box .back {
-            transform: rotateY(180deg);
-            background-color: #d0d0d0;
-        }
     </style>
 </head>
 <body>
-    <div class="container" id="flipBlock">
-        <div class="flip-box" id="flipBox">
-            <div class="side front"></div>
-            <div class="side back">Текст на обратной стороне</div>
-        </div>
+    <a href="mailto:ваш_email@example.com?subject=Тема&body=Привет!">
+        <button>Написать мне</button>
+    </a>    
+    <form action="sendmail.php" method="post">
+        <label>Ваше имя:</label>
+        <input type="text" name="username" required><br><br>
+        <label>Ваш email:</label>
+        <input type="email" name="useremail" required><br><br>
+        <label>Сообщение:</label>
+        <textarea name="message" required></textarea><br><br>
+        <input type="submit" value="Отправить">
+    </form>
+    <button id="openForm">Написать мне</button>
+    <div id="popup" style="display:none;">
+        <form id="mailForm">
+            <label>Ваше имя:</label>
+            <input type="text" name="username" required><br><br>
+            <label>Ваш email:</label>
+            <input type="email" name="useremail" required><br><br>
+            <label>Сообщение:</label>
+            <textarea name="message" required></textarea><br><br>
+            <input type="submit" value="Отправить">
+        </form>
     </div>
-
     <script>
-        const flipBox = document.getElementById('flipBox');
-        
-        flipBox.addEventListener('mouseenter', () => {
-            flipBox.classList.add('flipped');
+        document.getElementById('openForm').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
         });
         
-        flipBox.addEventListener('mouseleave', () => {
-            flipBox.classList.remove('flipped');
-        });
+        document.getElementById('mailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Для отправки через PHP, вам нужно отправить запрос на сервер
+            // Для mailto:
+            var mailtoLink = "kellisparkl@yandex.ru?subject=Сообщение&body=" + encodeURIComponent("Имя: " + document.getElementsByName('username')[0].value + "\nEmail: " + document.getElementsByName('useremail')[0].value + "\nСообщение: " + document.getElementsByName('message')[0].value);
+            window.location.href = mailtoLink;
+        });    
     </script>
 </body>
 </html>
