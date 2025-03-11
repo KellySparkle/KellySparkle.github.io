@@ -19,6 +19,7 @@ scrollbar-color: #EB5A94 #fff;
 }
 
 .page {
+  position: relative;
   scroll-snap-align: start;
   height: 100vh;
   display: flex;
