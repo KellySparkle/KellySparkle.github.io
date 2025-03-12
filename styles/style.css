@@ -3,6 +3,7 @@ html, body {
   scroll-snap-type: y mandatory;
   height: 100vh;
   margin: 0;
+  
   body {
 scrollbar-width: thin;
 scrollbar-color: #EB5A94 #fff;
@@ -146,16 +147,6 @@ transform: scale(1.05);
   }
 }
 
-.top-image {
-  position: fixed;
-  width: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0; 
-  animation: sway 5s infinite alternate ease-in-out; 
-}
-
 @keyframes sway {
   0% {
     transform: translate(-50%, -50%) rotate(-3deg);
@@ -209,7 +200,7 @@ transform: scale(1.05);
 	}
 
 .flip-container, .front, .back {
-  position: fixed;
+  position: absolute;
 	width: 429px;
 	height: 496px;
   top: 35%;
@@ -253,6 +244,7 @@ transform: scale(1.05);
 
 
 #flip2 {
+  position: absolute;
   left: calc(30% + 26.4%); /* Сдвигаем на ширину первого блока и немного отступа */
 }
 
@@ -265,4 +257,30 @@ transform: scale(1.05);
   left: 30%;
   border-radius: 20px;
   z-index: 10;
+}
+.top-image {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; 
+  animation: sway 5s infinite alternate ease-in-out; 
+}
+.text2 {
+  color: #EB5A94;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  top: 45%;
+  left: 25%;
+  z-index: 10;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: scaleY(-1);
+  transform: rotate(180deg);
 }
