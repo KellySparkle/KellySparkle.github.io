@@ -284,3 +284,21 @@ transform: scale(1.05);
   transform: scaleY(-1);
   transform: rotate(180deg);
 }
+
+.text3 {
+  font-family: 'Rubik Vinyl', sans-serif;
+  color: #fff;
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  top: -230%;
+  left: -150%;
+  z-index: 10;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: scaleX(-1);
+}
