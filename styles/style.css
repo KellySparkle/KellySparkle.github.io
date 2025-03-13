@@ -66,7 +66,7 @@ font-family: 'Rubik Vinyl', sans-serif;
 font-size: 46px;
 font-weight: bold;
 text-align: center;
-top: 37px;
+top: 50px;
 left: 2%;
 -webkit-user-select: none;
 -khtml-user-select: none;
@@ -301,4 +301,30 @@ transform: scale(1.05);
   -ms-user-select: none;
   user-select: none;
   transform: scaleX(-1);
+}
+
+.texthead {
+  font-family: 'Rubik Vinyl', sans-serif;
+  color: #EB5A94;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  top: 2%;
+  left: 25%;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+.texthead1 {
+  font-family: 'Rubik Vinyl', sans-serif;
+  color: #EB5A94;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  top: -1%;
+  left: -25%;
+  scroll-behavior: smooth;
+  text-decoration: none;
 }
