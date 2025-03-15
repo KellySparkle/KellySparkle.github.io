@@ -197,22 +197,26 @@ transform: scale(1.05);
     transform: rotateY(180deg);
   }
    /* весь контейнер поддерживает перспективу */
-.flip-container {
-	perspective: 1000;
-}
+   .flip-container {
+    width: 90%;
+    max-width: 429px;
+    margin: 20px auto;
+  }
+  
 	/* переверните сторону при проведении мышью */
 	.flip-container:hover .flipper, .flip-container.hover .flipper {
 		transform: rotateY(180deg);
 	}
 
-.flip-container, .front, .back {
-  position: absolute;
-	width: 429px;
-	height: 496px;
-  top: 35%;
-  left: 30%;
-  z-index: 10;
-}
+  .flip-container, .front, .back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 429px;
+  }
+  
 
 /* здесь находится скорость перевертывания */
 .flipper {
@@ -224,12 +228,11 @@ transform: scale(1.05);
 
 /* скройте обратную сторону во время переворота */
 .front, .back {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 429/496; /* Сохраняем пропорции */
 }
+
 
 /* лицевая сторона размещена над обратной */
 .front {
@@ -352,4 +355,10 @@ transform: scale(1.05);
     left: 0%;
     z-index: 10;
     border-radius: 23px;
+}
+
+@media (max-width: 768px) {
+  .flip-container {
+    width: 95%;
+  }
 }
