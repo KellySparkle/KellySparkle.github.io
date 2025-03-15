@@ -198,9 +198,7 @@ transform: scale(1.05);
   }
    /* весь контейнер поддерживает перспективу */
    .flip-container {
-    width: 90%;
-    max-width: 429px;
-    margin: 20px auto;
+    perspective: 1000;
   }
   
 	/* переверните сторону при проведении мышью */
@@ -210,11 +208,11 @@ transform: scale(1.05);
 
   .flip-container, .front, .back {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 429px;
+    width: 429px;
+    height: 496px;
+    top: 35%;
+    left: 30%;
+    z-index: 10;
   }
   
 
@@ -228,9 +226,11 @@ transform: scale(1.05);
 
 /* скройте обратную сторону во время переворота */
 .front, .back {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 429/496; /* Сохраняем пропорции */
+  backface-visibility: hidden;
+ 
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 
