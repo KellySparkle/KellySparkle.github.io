@@ -362,3 +362,18 @@ transform: scale(1.05);
     width: 95%;
   }
 }
+
+.icons {
+  position: fixed;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 54px;
+    transform: scaleY(-1);
+    left: 35%;
+    top: 17%;
+}
+
+.heith {
+  height: 100px;
+  width: 100px;
+}
